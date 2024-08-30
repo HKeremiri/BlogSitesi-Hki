@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+
+<html lang="tr">
+<!-- Header Starts -->
+    @await Component.InvokeAsync("_HeaderViewComponentPartial")
+<!-- Header End -->
+<body id="top">
+
+<div class="bgded overlay light" style="background-image:url('/skaxis/images/demo/backgrounds/01.png');"> 
+  <!-- NavBarStarts-->
+        @await Component.InvokeAsync("_LayoutNavbarViewComponentPartial")
+        <!-- NavBarEnd-->
+        <!-- ContentStart-->
+
+        @RenderBody()
+
+        <!-- ContentEnd-->
+<!-- FooterStarts -->
+    @await Component.InvokeAsync("_LayoutFooterViewComponentPartial")
+    <!-- Footer Ends -->
+
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+    <script src="~/skaxis/layout/scripts/jquery.min.js"></script>
+    <script src="~/skaxis/layout/scripts/jquery.backtotop.js"></script>
+    <script src="~/skaxis/layout/scripts/jquery.mobilemenu.js"></script>
+ 
+    <script src="~/skaxis/layout/scripts/jquery.flexslider-min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+   

@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- İntro Start -->
+@await Component.InvokeAsync("_HomeIntroViewComponentPartial")
+<!-- İntro End-->
+</div>
+
+
+
+
+<div class="wrapper row3">
+    <main class="hoc container clear">
+        <!-- GününBloğu-start-->
+        @await Component.InvokeAsync("_HomeBlogoftheDayComponentPartial")
+        <!-- GününBloğu-End-->
+        <hr class="btmspace-80">
+        <!-- Son Eklenen Bloglar-start-->
+        @await Component.InvokeAsync("_HomeLastBlogsComponentPartial")
+        <!-- Son Eklenen Bloglar-end-->
+        <div class="clear"></div>
+    </main>
+</div>
+
+
+</div>
