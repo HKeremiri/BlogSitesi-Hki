@@ -1,6 +1,4 @@
-﻿
-
-using BlogApi.Dtos.CategoryDtos;
+﻿using BlogApi.Dtos.CategoryDtos;
 using BlogApi.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -40,11 +38,11 @@ namespace BlogApi.Repository.CategoryRepository
             if (result != null)
             {
                 _context.Categories.Remove(result);
+                _context.SaveChanges();
 
                 return true;
             }
             return false;
-
 
         }
 
@@ -97,7 +95,7 @@ namespace BlogApi.Repository.CategoryRepository
                 return false;
             }
             var existingCategory = await _context.Categories
-                .FirstOrDefaultAsync(c=> c.CategoryId == updatecategoryDto.CategoryId);
+                .FirstOrDefaultAsync(c => c.CategoryId == updatecategoryDto.CategoryId);
             if (existingCategory == null)
             {
                 return false;

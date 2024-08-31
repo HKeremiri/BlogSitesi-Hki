@@ -1,8 +1,4 @@
-﻿using BlogApi.Dtos.RoleDtos;
-using BlogApi.Dtos.UserDtos;
-using BlogApi.Dtos;
-using Microsoft.AspNetCore.Mvc;
-using BlogApi.Dtos.PostDtos;
+﻿using BlogApi.Dtos.PostDtos;
 
 namespace BlogApi.Repository.PostRepository
 {
@@ -10,14 +6,14 @@ namespace BlogApi.Repository.PostRepository
     {
         Task<CreatePostDto> CreatePostAsync(CreatePostDto createPostDto);
 
-        Task<GetByIdPostDto> GetByIdPost(string id);
+        Task<GetByIdPostDto> GetByIdPost(int id);
 
         Task<List<GetAllPostDto>> GetAllPostsAsync();
 
-        Task<UpdatePostDto> UpdatePostAsync(UpdatePostDto updatePostDto);
+        Task<bool> UpdatePostAsync(UpdatePostDto updatePostDto);
  
 
-        Task<bool> DeletePostAsync(string id);
+        Task<bool> DeletePostAsync(int id);
 
       
     }

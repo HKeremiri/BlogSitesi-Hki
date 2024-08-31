@@ -7,14 +7,11 @@ namespace BlogApi.Dtos.PostDtos
         public int PostId { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
-        public AppUser Author { get; set; }
-        public string? ImageUrl { get; set; }
-     
-
-        public DateTime? UpdateTime { get; set; }
+        public string UserId  { get; set; }
+        public string? ImageUrl { get; set; } 
 
 
-        public Category Category { get; set; }
-        public List<Tag> Tags { get; set; }
+        public string CategoryName { get; set; }
+        public List<int> TagId { get; set; }
     }
 }

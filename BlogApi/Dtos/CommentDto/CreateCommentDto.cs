@@ -1,6 +1,16 @@
-﻿namespace BlogApi.Dtos.CommetDto
+﻿
+namespace BlogApi.Dtos.CommentDto
 {
     public class CreateCommentDto
     {
+   
+
+        public string Content { get; set; }
+
+        public string UserId { get; set; }
+
+        public int PostId { get; set; }
+
+     
     }
 }

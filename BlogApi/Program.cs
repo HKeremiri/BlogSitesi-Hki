@@ -1,6 +1,8 @@
 using BlogApi.Models;
 using BlogApi.Repository.CategoryRepository;
+using BlogApi.Repository.CommentRepository;
 using BlogApi.Repository.PostRepository;
+using BlogApi.Repository.TagRepository;
 using BlogApi.Repository.UserRepository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -21,6 +23,8 @@ builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Contex
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ICategoryServiceRepository, CategoryServiceRepository>();
 builder.Services.AddScoped<IPostServiceRepository, PostServiceRepository>();
+builder.Services.AddScoped<ITagServiceRepository, TagServiceRepository>();
+builder.Services.AddScoped<ICommentServiceRepository, CommentServiceRepository>();
 builder.Services.AddDbContext<Context>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
