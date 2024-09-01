@@ -1,0 +1,20 @@
+﻿
+<h2>Bir Yorum Yazın</h2>
+<form asp-action="AddComment" asp-controller="Comment" method="post">
+		<div class="one_third first">
+		<label for="name">Name</label>
+        <input type="hidden" value="halit" name="UserId" readonly/>
+        <input type="hidden" value="postid" name="PostId" readonly />
+		<input type="text" name="name" id="name" value="halit" size="22" required="" readonly>
+	</div>	
+	<div class="block clear">
+		<label for="comment">Yorumunuz <span>*</span></label>
+		<textarea name="comment" id="comment" cols="25" rows="10"></textarea>
+	</div>
+	<div>
+		<input type="submit" name="submit" value="Formu gönder">
+		&nbsp;
+		<input type="reset" name="reset" value="Formu sıfırla">
+	</div>
+</form>
+

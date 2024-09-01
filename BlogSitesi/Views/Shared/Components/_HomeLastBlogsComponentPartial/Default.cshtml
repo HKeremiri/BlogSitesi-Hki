@@ -1,44 +1,32 @@
-﻿
+﻿@model List<GetAllPostDto>
 <h2>Son Eklenen Bloglar</h2>
 
 <ul class="nospace group overview">
 
-    <li class="one_third">
+    @foreach (var item in Model)
+    {
+           <li class="one_third">
         <article>
-            <a href="#"><img src="/skaxis/images/demo/320x240.png" alt=""></a>
-            <h6 class="heading">Metus porta fringilla</h6>
+                <a asp-route-id="@item.PostId"><img src="/skaxis/images/demo/320x240.png" alt=""></a>
+            <h6 class="heading">@item.Title</h6>
             <ul class="nospace meta">
-                <li><i class="fa fa-user"></i> <a href="#">Admin</a></li>
-                <li><i class="fa fa-tag"></i> <a href="#">Tag Name</a></li>
+                <li><i class="fa fa-user"></i> <a asp-route-id="@item.UserId">@item.UserName</a></li>
+					@foreach (var tag in item.TagName)
+					{
+						<li>
+							<i class="fa fa-tag"></i>
+
+							<a href="">@tag</a>
+                       
+                        </li> }
             </ul>
-            <p>Vestibulum porttitor rhoncus mi porta consectetur dui consequat vitae vivamus vitae urna quis urna pulvinar&hellip;</p>
-            <footer class="nospace"><a class="btn" href="#">Full Story &raquo;</a></footer>
+            <p>@item.Content</p>
+            <footer class="nospace"><a class="btn" href="#">Detaylı Bir Şekilde okuyun</a></footer>
         </article>
     </li>
-    <li class="one_third">
-        <article>
-            <a href="#"><img src="/skaxis/images/demo/320x240.png" alt=""></a>
-            <h6 class="heading">Suspendisse sollicitudin</h6>
-            <ul class="nospace meta">
-                <li><i class="fa fa-user"></i> <a href="#">Admin</a></li>
-                <li><i class="fa fa-tag"></i> <a href="#">Tag Name</a></li>
-            </ul>
-            <p>Lorem a mauris accumsan iaculis rutrum libero aenean fringilla risus eu varius blandit donec convallis nunc et&hellip;</p>
-            <footer class="nospace"><a class="btn" href="#">Full Story &raquo;</a></footer>
-        </article>
-    </li>
-    <li class="one_third">
-        <article>
-            <a href="#"><img src="/skaxis/images/demo/320x240.png" alt=""></a>
-            <h6 class="heading">Lacus ultricies ac luctus</h6>
-            <ul class="nospace meta">
-                <li><i class="fa fa-user"></i> <a href="#">Admin</a></li>
-                <li><i class="fa fa-tag"></i> <a href="#">Tag Name</a></li>
-            </ul>
-            <p>Neque tincidunt vestibulum finibus efficitur nisi sit amet elementum lorem efficitur eget habitant tristique&hellip;</p>
-            <footer class="nospace"><a class="btn" href="#">Full Story &raquo;</a></footer>
-        </article>
-    </li>
+    }
+ 
+ 
 
 
 </ul>

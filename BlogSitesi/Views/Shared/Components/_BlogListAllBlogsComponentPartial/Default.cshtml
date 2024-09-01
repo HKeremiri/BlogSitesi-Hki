@@ -1,0 +1,64 @@
+﻿@model List<GetAllPostDto>
+
+<div class="wrapper row3">
+    <main class="hoc container clear">
+        <!-- main body -->
+        <!-- ################################################################################################ -->
+        <div class="content">
+            <!-- ################################################################################################ -->
+            <div id="gallery">
+                <figure>
+                    <header class="heading">Tüm Bloglar</header>
+                    <ul class="nospace clear">
+                        @foreach (var item in Model)
+                        {
+                            <li class="one_quarter">
+                                <article>
+                                    <a asp-route-id="@item.PostId" asp-action="Index"><img src="/skaxis/images/demo/320x240.png" alt=""></a>
+                                    <h6 class="heading">@item.Title</h6>
+                                    <ul class="nospace meta">
+                                        <li><i class="fa fa-user"></i> <a asp-route-id="@item.UserId">@item.UserName</a></li>
+                                        @foreach (var tag in item.TagName)
+                                        {
+                                            <li>
+                                                <i class="fa fa-tag"></i>
+
+                                                <a href="">@tag</a>
+
+                                            </li>
+                                        }
+                                    </ul>
+                                    <p>@item.Content</p>
+                                    <footer class="nospace"><a class="btn" asp-action="Index" asp-route-PostId="@item.PostId">Detaylı Bir Şekilde okuyun</a></footer>
+                                </article>
+                            </li>
+                        }
+                    </ul>
+
+                </figure>
+            </div>
+            <!-- ################################################################################################ -->
+            <!-- ################################################################################################ -->
+            <nav class="pagination">
+                <ul>
+                    <li><a href="#">« Previous</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><strong>…</strong></li>
+                    <li><a href="#">6</a></li>
+                    <li class="current"><strong>7</strong></li>
+                    <li><a href="#">8</a></li>
+                    <li><a href="#">9</a></li>
+                    <li><strong>…</strong></li>
+                    <li><a href="#">14</a></li>
+                    <li><a href="#">15</a></li>
+                    <li><a href="#">Next »</a></li>
+                </ul>
+            </nav>
+            <!-- ################################################################################################ -->
+        </div>
+        <!-- ################################################################################################ -->
+        <!-- / main body -->
+        <div class="clear"></div>
+    </main>
+</div>

@@ -1,0 +1,22 @@
+﻿<div class="wrapper row3">
+	<main class="hoc container clear">
+		<!-- main body -->
+		<div class="content">
+			<!-- ContentStart -->
+			@await Component.InvokeAsync("_BlogContentComponentPartial")
+
+			<!-- ContentEnd -->
+			<div id="comments">
+				<!-- CommentsStart -->
+				@await Component.InvokeAsync("_BlogCommentComponentPartial")
+
+				<!-- CommentsEnd -->
+				<!-- SendCommentStart -->
+				@await Component.InvokeAsync("_BlogSendCommentComponentPartial")
+				<!-- SendCommentEnd -->
+			</div>
+		</div>
+
+		<div class="clear"></div>
+	</main>
+</div>

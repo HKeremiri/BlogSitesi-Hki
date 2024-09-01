@@ -92,7 +92,7 @@ namespace BlogApi.Repository.PostRepository
                         Content = post.Content,
                         ImageUrl = post.ImageUrl,
                         CategoryName = post.Category.CategoryName,
-                        UserId = post.Author.Id,
+                        UserName = post.Author.UserName,
                         CreatedAt = post.CreatedAt,
                         UpdateTime = post.UpdateTime,
                         PostId = post.PostId,
